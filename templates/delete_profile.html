@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container py-5">
+    <form method="POST" class="text-white border border-1 w-50 m-auto p-3">
+        <h2>{{profile.isim}}, Profili silmek istediğine emin misin?</h2>
+        {% csrf_token %}
+        <div class="text-center mt-5">
+        <button type="submit" class="btn btn-danger">Sil</button>
+        <button type="submit" class="btn btn-primary">
+            <a href="{% url 'profiles' %}" class="text-decoration-none text-white">İptal</a>
+        </button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

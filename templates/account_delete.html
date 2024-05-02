@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container py-5">
+    <form method="POST" class="w-50 m-auto text-white text-center">
+        <h3>Hesabı silmek istediğinize emin misiniz?</h3>
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">SİL</button>
+        <a href="{% url 'hesap' %}" class="btn btn-info mx-3">İptal</a>
+    </form>
+</div>
+
+
+
+{% endblock content %}
